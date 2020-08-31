@@ -16,61 +16,71 @@ let quotes = [
         quote: "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
         source: "Patrick McKenzie",
         citation: "Twitter",
-        year: "2016"
+        year: "2016",
+        tags: "inspiring, truth"
     },
     {
         quote: "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
         source: "Marilyn Monroe",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "funny, relatable"
     },
     {
         quote: "Be yourself; everyone else is already taken.",
         source: "Oscar Wilde",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "funny"
     },
     {
         quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
         source: "Albert Einstein",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "deep, funny, einstein"
     },
     {
         quote: "So many books, so little time.",
         source: "Frank Zappa",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "books, deep"
     },
     {
         quote: "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
         source: "Bernard M. Baruch",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "inspiring"
     },
     {
         quote: "A room without books is like a body without a soul.",
         source: "Marcus Tullius Cicero",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "deep, books"
     },
     {
         quote: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
         source: "Dr. Seuss",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "relatable, deep, funny"
     },
     {
         quote: "You only live once, but if you do it right, once is enough.",
         source: "Mae West",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "funny, relatable"
     },
     {
         quote: "Be the change that you wish to see in the world.",
         source: "Mahatma Gandhi",
         citation: " ",
-        year: " "
+        year: " ",
+        tags: "inspiring, deep, gandhi"
     }
 ];
 
@@ -105,14 +115,18 @@ function printQuote() {
     
     if (quote.citation === " " && quote.year !== " ") {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
-        <p class="source">${quote.source}<span class="year">${quote.year}</span></p>`;
+        <p class="source">${quote.source}<span class="year">${quote.year}</span></p>
+        <p>Tags: ${quote.tags}</p>`;
     } else if (quote.citation !== " " && quote.year === " ") {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
-        <p class="source">${quote.source}<span class="citation">${quote.citation}</span>`;
+        <p class="source">${quote.source}<span class="citation">${quote.citation}</span>
+        <p>Tags: ${quote.tags}</p>`;
     } else {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
-        <p class="source">${quote.source}`;
+        <p class="source">${quote.source}
+        <p>Tags: ${quote.tags}</p>`;
     }
+    document.getElementById("main-body").style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
 }
 
 /***
@@ -121,3 +135,5 @@ function printQuote() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+setInterval(printQuote, 10000);
