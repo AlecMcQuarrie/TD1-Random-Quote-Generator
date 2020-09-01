@@ -119,7 +119,11 @@ function printQuote() {
         <p>Tags: ${quote.tags}</p>`;
     } else if (quote.citation !== " " && quote.year === " ") {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
-        <p class="source">${quote.source}<span class="citation">${quote.citation}</span>
+        <p class="source">${quote.source}<span class="citation">${quote.citation}</span></p>
+        <p>Tags: ${quote.tags}</p>`;
+    } else if (quote.citation !== " " && quote.year === " ") {
+        document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
+        <p class="source">${quote.source}</p>
         <p>Tags: ${quote.tags}</p>`;
     } else {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
