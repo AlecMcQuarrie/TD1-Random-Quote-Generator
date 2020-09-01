@@ -123,7 +123,7 @@ function printQuote() {
         <p>Tags: ${quote.tags}</p>`;
     } else {
         document.getElementById("quote-box").innerHTML = `<p class="quote">${quote.quote}</p>
-        <p class="source">${quote.source}
+        <p class="source">${quote.source}<span class="citation">${quote.citation}</span><span class="year">${quote.year}</span></p>
         <p>Tags: ${quote.tags}</p>`;
     }
     document.getElementById("main-body").style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
